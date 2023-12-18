@@ -1,0 +1,48 @@
+<ng-container *ngIf="tableSource.data.length"
+  ><table mat-table [dataSource]="tableSource">
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Imię Nazwisko</th>
+      <td mat-cell *matCellDef="let player">{{ player.name }}</td>
+    </ng-container>
+
+    <ng-container
+      *ngFor="let round of rounds; index as i"
+      [matColumnDef]="round"
+    >
+      <th class="round-score-title" mat-header-cell *matHeaderCellDef>
+        {{ round }}
+      </th>
+      <td mat-cell *matCellDef="let player">
+        <div class="scores">
+          <span class="score text-center">
+            {{ player.score[i].firstThrow }}</span
+          >
+          <span class="score text-center">{{
+            player.score[i].secondThrow
+          }}</span>
+        </div>
+        <div class="text-center">{{ player.score[i].roundTotal }}</div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="bonus">
+      <th mat-header-cell *matHeaderCellDef>Bonus</th>
+      <td mat-cell *matCellDef="let player">
+        <div class="round-score" *ngIf="player.score.length > 10">
+          {{ player.score[player.score.length - 1].firstThrow }}
+        </div>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="total">
+      <th mat-header-cell *matHeaderCellDef>Wynik</th>
+      <td mat-cell *matCellDef="let player">
+        <div class="round-score">{{ player.total }}</div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: columns"></tr>
+  </table>
+</ng-container>
+<div class="no-data text-center" *ngIf="!tableSource.data.length">
+  Dodaj plik z wynikami!
+</div>

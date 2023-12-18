@@ -1,0 +1,21 @@
+<div class="menu space-between">
+  <div class="error">
+    <span *ngIf="showError"> Błedny format pliku lub błędne dane </span>
+  </div>
+  <div class="">
+    <input [hidden]="true" type="file" (change)="addFile($event)" #fileInput />
+    <button mat-raised-button color="primary" (click)="fileInput.click()">
+      <span color="accent">Wybierz plik </span>
+    </button>
+    <button
+      class="dustbin"
+      (click)="clearData()"
+      mat-raised-button
+      color="accent"
+      matTooltip="Wyczyść dane"
+      matTooltipPosition="below"
+    >
+      <mat-icon color="primary">delete</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+
+.container{
+    background:rgb(43, 43, 43);
+    padding: 10px;
+    min-height: 100%;
+    margin: 0 auto -50px;
+    color: white;
+}
+.neon-text{
+    color: #fff;
+    text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #bc13fe,   
+    0 0 82px #bc13fe,
+    0 0 92px #bc13fe,
+    0 0 102px #bc13fe,
+    0 0 151px #bc13fe;
+}
+h3{
+    margin-top: 40px;
+    margin-bottom: 70px;
+    text-align: center;
+    font-size: 4.2rem;
+    padding: 0.4em;
+}
+.footer{
+    position:fixed;
+    bottom:0px;
+  
+}

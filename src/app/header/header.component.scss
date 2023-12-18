@@ -1,0 +1,19 @@
+.menu{
+    display: flex;
+    margin-bottom: 30px;
+}
+.dustbin{
+    margin-left: 10px;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.flex-right{
+justify-content: right;
+}
+.error{
+    color: red;
+    padding-top: 10px;
+}

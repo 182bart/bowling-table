@@ -1,0 +1,76 @@
+.mat-table{
+    background:  rgb(43, 43, 43);
+    width: 80%;
+}
+
+.mat-header-cell{
+    color: white
+}
+
+.mat-cell, .mat-header-cell {
+    border-right: 1px solid rgba(255,255,255,.12);
+    border-left: 1px solid rgba(255,255,255,.12);
+}
+
+  .mat-header-cell{
+    padding-left: 8px;
+    border-top: 1px solid rgba(255,255,255,.12); 
+}
+
+.score{
+    width: 50%;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    margin-top: -8px;
+}
+
+.score:first-child{
+    border-right: 1px solid rgba(255,255,255,.12);
+}
+
+// .round-score{
+//     text-align: center;
+// }
+
+.scores{
+    display: flex;
+    justify-content: space-between;
+}
+
+.round-score-title{
+    ::ng-deep{
+        text-align: center;
+        padding-left: 0;
+    }
+}
+
+.name-table{
+    ::ng-deep{
+        border-left: 1px solid rgba(255,255,255,.12);
+    }
+}
+.mat-column-name{
+    width: 15%;
+}
+.mat-column-bonus {
+    width: 8%;
+    text-align: center;
+}
+.mat-column-total {
+    width: 8%;
+    text-align: center;
+}
+
+@media (max-width: 1000px) {
+    .mat-table {
+        width: 100%;
+    }
+}
+.no-data{
+    font-size: 28px;
+     margin: auto;
+     margin-top: 50px;
+}
+
+.text-center{
+    text-align: center;
+}
