@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HeaderComponent } from './header.component';
+import { By } from '@angular/platform-browser';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
@@ -18,7 +19,15 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should clear data when clicked dustbin button', () => {
+    const clearSpy = spyOn(component, 'clearData').and.callThrough();
+    const cleatButton = fixture.debugElement.query(By.css('.dustbin'));
+    cleatButton.triggerEventHandler('click', {});
+    expect(clearSpy).toHaveBeenCalled();
+    expect(component.showError).toEqual(false);
   });
 });

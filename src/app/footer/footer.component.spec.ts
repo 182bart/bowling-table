@@ -15,25 +15,19 @@ describe('FooterComponent', () => {
     component = fixture.componentInstance;
   });
 
-  fit('should create the component', () => {
+  it('should create the component', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should render the content in the footer', () => {
-    const footerElement: HTMLElement = fixture.nativeElement;
-    const spanElement = footerElement.querySelector('span');
-    const anchorElement = footerElement.querySelector('a');
+  it('should render the content in the footer', () => {
+    const footer: HTMLElement = fixture.nativeElement;
+    const name = footer.querySelector('span');
+    const email = footer.querySelector('a');
+    expect(name?.textContent).toContain('Bartosz Korusiewicz ©');
 
-    // Sprawdzamy, czy span zawiera poprawny tekst
-    expect(spanElement?.textContent).toContain('Bartosz Korusiewicz ©');
+    expect(email?.textContent).toContain('bartosz.korusiewicz@gmail.com');
 
-    // Sprawdzamy, czy link zawiera poprawny tekst
-    expect(anchorElement?.textContent).toContain(
-      'bartosz.korusiewicz@gmail.com'
-    );
-
-    // Sprawdzamy, czy link ma poprawny atrybut href
-    expect(anchorElement?.getAttribute('href')).toBe(
+    expect(email?.getAttribute('href')).toBe(
       'mailto: bartosz.korusiewicz@gmail.com'
     );
   });

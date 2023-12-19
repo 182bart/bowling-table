@@ -10,7 +10,7 @@ describe('ScoreService', () => {
     service = TestBed.inject(ScoreService);
   });
 
-  fit('should be created', () => {
+  it('should be created', () => {
     expect(service).toBeTruthy();
   });
 });
